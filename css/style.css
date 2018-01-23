@@ -1,0 +1,150 @@
+
+body { 
+  font-family: Verdana, arial, sans-serif;
+  color: #333333;
+  background: #F3C2CF url('/images/avant_bg.jpg') repeat-x;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+img {
+  border: 0;
+}
+
+#main {
+  position: absolute;
+  left: 0; top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 700px;
+}
+#avant_bg {
+  position: absolute;
+  left: 0; top: 0;
+  max-width: 688px;
+  width: 100%;
+  height: 670px;
+  object-fit: cover;
+  margin:0;
+  padding: 0;
+  z-index: -1;
+}
+#exhibits {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  min-height: 100vw;
+  padding: 35px 0 0 5%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s linear;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(255,255,255,0.5); /* */
+}
+
+
+/**
+ * art menu
+ */
+#artMenu { 
+  position: absolute;
+  top:5px;
+  left:5px;
+}
+#artMenu a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+  display: block;
+  opacity: 0.2;
+  transition: opacity 0.4s linear;
+}
+#artMenu a#bang {
+  font-size: 22px;
+  font-weight: bold;
+  opacity: 0.4;
+}
+#artMenu a#bang:hover {
+  opacity:0.8;
+}
+#artMenu a:hover {
+  opacity:0.6;
+}
+
+/*
+ * photo menu
+ */
+#photoMenu { 
+  position: absolute;
+  top:5px;
+  right:5px;
+}
+#photoMenu a {
+  font-size: 18px;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  opacity: 0.1;
+  transition: all 0.4s ease;
+}
+#photoMenu a:hover {
+  opacity:0.8;
+}
+#photoMenu a span {
+  color: rgba(0,0,0,0.3);
+  font-weight: normal;
+}
+
+
+/**
+ * LINK BOX
+ */
+#linkbox {
+  max-width: 300px;
+  margin: 60px auto 0 auto;
+  padding: 10px 5px 10px 20px;
+  border-top: 4px solid #bbbbcc;
+  border-right: 1px solid #bbbbcc;
+  border-bottom: 1px solid #bbbbcc;
+  border-left: 1px solid #bbbbcc;
+  background: rgba(255, 255, 255, 0.3);
+}
+@media only screen and (min-width: 1000px) {
+  #linkbox {
+    margin: 60px 0 0 350px;
+  }
+}
+#linkbox ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#linkbox li {
+  margin: 15px 0 15px 0;
+}
+#linkbox a { outline: none; }
+#linkbox a img {
+  opacity: 0.3;
+  transition: opacity 0.3s linear;
+}
+#linkbox a img:hover {
+  opacity: 0.7;
+}
+#by-line {
+  position: absolute;
+  margin: 20px 0 0 80px;
+  color: rgba(0,0,0,0.3);
+}
+#by-line a {
+  outline: none;
+  text-decoration: none;
+  color: rgba(0,0,0,0.3);
+  transition: color 0.6s ease;
+}
+#by-line a:hover {
+  color: black;
+}

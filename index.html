@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>avant.net</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/artwork/artwork.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="robots" content="all" />
+<meta name="title" content="avant.net" />
+<script src="/artwork/artwork.js"></script>
+</head>
+
+<body>
+
+
+<div id="exhibits"></div>
+
+<div id="main">
+
+<span id="bgmov">
+<img id="avant_bg" src="/images/avant_bg/avant.jpg"  alt="background" title="No video playback capabilities" />
+</span>
+
+<script>
+	function supports_video() {
+		return !!document.createElement('video').canPlayType;
+	}
+
+	if (supports_video() && // do not use video background for iOS
+			!(navigator.userAgent.match(/iPhone/i)) && 
+			!(navigator.userAgent.match(/iPad/i)) && 
+			!(navigator.userAgent.match(/iPod/i))) {
+    var el = document.getElementById("bgmov");
+	el.innerHTML = ''+
+		'<video id="avant_bg" poster="/images/avant_bg/avant.jpg" loop>'+
+        '<source src="/images/avant_bg/avant.webm" type="video/webm" />'+
+        '<source src="/images/avant_bg/avant.mp4" type="video/mp4" />'+
+        '<source src="/images/avant_bg/avant.ogv" type="video/ogg" />'+
+		// no swf, flash objects are always on top and can never be background videos
+		'</video>';
+	var vid = document.getElementById("avant_bg");
+	// chrome bug, video doesn't autostart without controls
+    vid.setAttribute('controls', 'true');
+    vid.removeAttribute('controls');
+	vid.load();
+	vid.play();
+	}
+</script>
+
+
+<script>
+var art_on = false;
+var art_msg = '#artwork';
+xga.preload('bang',art_msg);
+function toggleArt() {
+  if (art_on) {
+    art_on = false;
+    document.getElementById('bang').innerHTML = art_msg;
+    document.getElementById('exhibits').style.opacity = 0;
+    document.getElementById('exhibits').style.visibility = 'hidden';
+    window.scrollTo(0,0);
+    //document.getElementById('exhibits').innerHTML = '';
+  } else {
+    xga.gallery('exhibits');
+    art_on = true;
+    document.getElementById('bang').innerHTML = '#close';
+    document.getElementById('exhibits').style.opacity = 1;
+    document.getElementById('exhibits').style.visibility = 'visible';
+  }
+}
+// event listeners 
+// TODO update artwork.js
+document.onclick = function(event) {
+  var modal = document.getElementById('exhibits');
+  if (event.target == modal) {
+    toggleArt();
+  }
+};
+</script>
+
+<div id="artMenu">
+<div><a id="bang" href="#" onclick="toggleArt(); return false;"></a></div>
+</div>
+
+<div id="photoMenu">
+<a id="photobang" href="#"><span>photos</span>#</a>
+</div>
+
+
+<div id="linkbox" class="">
+<ul class="Xsolid">
+<li><a href="http://anattatechnologies.com/"><img src="/images/at.gif" /></a></li>
+<li><a href="http://verbose.net/"><img src="/images/verbose.gif" /></a></li>
+<li><a href="http://anattastudios.com/"><img src="/images/as.gif" /></a></li>
+</ul>
+<span id="by-line">by <a href="http://timwarnock.com/">Tim Warnock</a></span>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-104343-4");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
