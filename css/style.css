@@ -37,7 +37,7 @@ img {
   top: 0;
   right: 0;
   min-height: 100vw;
-  padding: 35px 0 0 5%;
+  padding: 35px 0 0 30px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s linear;
@@ -55,23 +55,21 @@ img {
   left:5px;
 }
 #artMenu a {
+  font-size: 25px;
+  font-weight: bold;
   text-decoration: none;
   outline: none;
   color: black;
   display: block;
-  opacity: 0.2;
-  transition: opacity 0.4s linear;
-}
-#artMenu a#bang {
-  font-size: 22px;
-  font-weight: bold;
-  opacity: 0.4;
-}
-#artMenu a#bang:hover {
-  opacity:0.8;
+  transition: all 0.4s linear;
+  opacity: 0.5;
 }
 #artMenu a:hover {
-  opacity:0.6;
+  opacity: 1.0;
+}
+#artMenu a span {
+  color: rgba(0,0,0,0.5);
+  font-weight: normal;
 }
 
 /*
@@ -83,19 +81,19 @@ img {
   right:5px;
 }
 #photoMenu a {
-  font-size: 18px;
+  font-size: 25px;
+  font-weight: bold;
   text-decoration: none;
   outline: none;
   color: black;
-  font-weight: bold;
-  opacity: 0.1;
   transition: all 0.4s ease;
+  opacity: 0.5;
 }
 #photoMenu a:hover {
-  opacity:0.8;
+  opacity: 1;
 }
 #photoMenu a span {
-  color: rgba(0,0,0,0.3);
+  color: rgba(0,0,0,0.5);
   font-weight: normal;
 }
 
@@ -104,7 +102,7 @@ img {
  * LINK BOX
  */
 #linkbox {
-  max-width: 300px;
+  max-width: 330px;
   margin: 60px auto 0 auto;
   padding: 10px 5px 10px 20px;
   border-top: 4px solid #bbbbcc;
@@ -124,7 +122,7 @@ img {
   padding: 0;
 }
 #linkbox li {
-  margin: 15px 0 15px 0;
+  margin: 25px 10px 35px 10px;
 }
 #linkbox a { outline: none; }
 #linkbox a img {

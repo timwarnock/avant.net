@@ -7,9 +7,10 @@
 <link href="/artwork/artwork.css" rel="stylesheet" type="text/css" />
 <link rel="icon" href="/favicon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<meta name="robots" content="all" />
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta name="title" content="avant.net" />
 <script src="/artwork/artwork.js"></script>
+<script src="/photos/photos.js"></script>
 </head>
 
 <body>
@@ -52,20 +53,28 @@
 
 <script>
 var art_on = false;
-var art_msg = '#artwork';
+var art_msg = '#<span>artwork</span>';
+var photos_msg = '<span>photos</span>#';
 xga.preload('bang',art_msg);
-function toggleArt() {
+photox.preload('photobang',photos_msg);
+function toggleArt(which) {
   if (art_on) {
     art_on = false;
     document.getElementById('bang').innerHTML = art_msg;
+    document.getElementById('photobang').innerHTML = photos_msg;
     document.getElementById('exhibits').style.opacity = 0;
     document.getElementById('exhibits').style.visibility = 'hidden';
     window.scrollTo(0,0);
     //document.getElementById('exhibits').innerHTML = '';
   } else {
-    xga.gallery('exhibits');
+  	if (which === 'photos') {
+  	  photox.gallery('exhibits');
+  	} else {
+      xga.gallery('exhibits');
+    }
     art_on = true;
     document.getElementById('bang').innerHTML = '#close';
+    document.getElementById('photobang').innerHTML = 'close#';
     document.getElementById('exhibits').style.opacity = 1;
     document.getElementById('exhibits').style.visibility = 'visible';
   }
@@ -75,17 +84,17 @@ function toggleArt() {
 document.onclick = function(event) {
   var modal = document.getElementById('exhibits');
   if (event.target == modal) {
-    toggleArt();
+    toggleArt(null);
   }
 };
 </script>
 
 <div id="artMenu">
-<div><a id="bang" href="#" onclick="toggleArt(); return false;"></a></div>
+<a id="bang" href="#" onclick="toggleArt('artwork'); return false;"></a>
 </div>
 
 <div id="photoMenu">
-<a id="photobang" href="#"><span>photos</span>#</a>
+<a id="photobang" href="#" onclick="toggleArt('photos'); return false;"></a>
 </div>
 
 
