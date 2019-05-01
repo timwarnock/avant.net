@@ -46,7 +46,7 @@
     vid.setAttribute('controls', 'true');
     vid.removeAttribute('controls');
 	vid.load();
-	vid.play();
+	//vid.play();
 	}
 </script>
 
@@ -81,7 +81,11 @@ function toggleArt(which) {
 }
 // event listeners 
 // TODO update artwork.js
+document.onmouseover = function(event) {
+  vid.play();
+};
 document.onclick = function(event) {
+  vid.play();
   var modal = document.getElementById('exhibits');
   if (event.target == modal) {
     toggleArt(null);
@@ -95,16 +99,17 @@ document.onclick = function(event) {
 
 <div id="photoMenu">
 <a style="display:none;" id="photobang" href="#" onclick="toggleArt('photos'); return false;"></a>
-<a id="timandhoabang" href="http://timandhoa.com"><span>timandhoa</span>#</a>
+<a id="timandhoabang" href="https://timandhoa.com"><span>timandhoa</span>#</a>
 </div>
 
 <div id="linkbox" class="">
 <ul class="Xsolid">
-<li><a href="http://anattastudios.com/"><img src="/images/as.gif" /></a></li>
-<li><a href="http://verbose.net/"><img src="/images/verbose.gif" /></a></li>
-<li><a href="http://anattatechnologies.com/"><img src="/images/at.gif" /></a></li>
+<li><a href="https://anattastudios.com/lit/"><img src="/images/as.gif" /></a></li>
+<li><a href="https://verbose.net/lang/"><img src="/images/verbose.gif" /></a></li>
+<li><a href="https://anattatechnologies.com/q/"><img src="/images/at.gif" /></a></li>
 </ul>
-<span id="by-line">by <a href="http://timwarnock.com/">Tim Warnock</a></span>
+<span id="by-line">by <a href="https://timwarnock.com/">Tim Warnock</a>
+ | <a href="https://去.cc/">去.cc</a></span>
 </div>
 
 </div>
