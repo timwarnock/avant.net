@@ -2,7 +2,7 @@
 body { 
   font-family: Verdana, arial, sans-serif;
   color: #333333;
-  background: #F3C2CF url('/images/avant_bg.jpg') repeat-x;
+  background: #F3C2CF url('/img/avant_bg.jpg') repeat-x;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -124,12 +124,38 @@ img {
 #linkbox li {
   margin: 25px 10px 35px 10px;
 }
-#linkbox a { outline: none; }
+#linkbox a {
+  outline: none; 
+  text-decoration: none;
+}
 #linkbox a img {
   opacity: 0.3;
   transition: opacity 0.3s linear;
 }
 #linkbox a img:hover {
+  opacity: 0.7;
+}
+.mono {
+  font-family: system-ui, monospace;
+}
+.serif {
+  font-family: math, serif;
+}
+.cursive {
+  font-family: fangsong;
+}
+.italic {
+  font-style: italic;
+}
+#linkbox a span.logotxt {
+  color: #335;
+  font-size: 58px;
+  font-weight: 100;
+  opacity: 0.3;
+  transition: opacity 0.3s linear;
+  text-shadow: 0px 0px 5px white;
+}
+#linkbox a span.logotxt:hover {
   opacity: 0.7;
 }
 #by-line {
